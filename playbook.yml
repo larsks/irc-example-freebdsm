@@ -1,5 +1,14 @@
 ---
-- hosts: localhost
-  gather_facts: false
+# Target nodes
+- hosts:
+  - test-target
+  become: yes
+  # override some role/inventory vars
+  vars:
+  - project_name: percona_test
+  - stand_name: stage_test
+
+# Global roles to run
   roles:
-    - example
+  - app-deploy
+

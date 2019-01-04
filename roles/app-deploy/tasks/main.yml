@@ -7,3 +7,4 @@
         image: "{{ docker_containers['percona']['image'] }}"
         name: percona
         env: "{{ docker_containers['percona']['envs'] }}"
+

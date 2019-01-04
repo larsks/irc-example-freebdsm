@@ -1,0 +1,9 @@
+test-vms:
+  vars:
+    app_engine: docker
+    services:
+    - dockered-percona
+  hosts:
+    test-target:
+      ansible_host: localhost
+      percona_root_password: test
