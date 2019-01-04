@@ -1,0 +1,9 @@
+---
+- name: Create percona container
+  debug:
+    msg:
+      docker_container:
+        state: present
+        image: "{{ docker_containers['percona']['image'] }}"
+        name: percona
+        env: "{{ docker_containers['percona']['envs'] }}"

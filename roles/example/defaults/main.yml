@@ -1,0 +1,11 @@
+---
+registry_url: http://foo
+percona_root_password: foo
+stand_name: foo
+
+docker_containers:
+  percona:
+    image: "{{ registry_url }}/percona:latest"
+    envs:
+      MYSQL_DATABASE: "central_{{ region | default(stand_name) }}"
+      MYSQL_ROOT_PASSWORD: "{{ percona_root_password }}"
